@@ -31,13 +31,12 @@ function password_copy() {
   var text = document.getElementById("password");
   text.select();
   document.execCommand("copy");
+  alert("コピーしました！");
 }
 </script>
 </HEAD>
 <BODY>
 <h1>パスワードを乱数で自動生成します</h1>
-<!-- header -->
-<script src="/js_header.js"></script>
 <p>アルファベット大文字、小文字、記号混じりで生成します。</p>
 <br>
 <table style="margin:0px auto;"><tr><td>
