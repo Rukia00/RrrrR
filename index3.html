@@ -26,6 +26,13 @@ document.fm.chr.value=w
 }
 // -->
 </script>
+<script type="text/javascript">
+function password_copy() {
+  var text = document.getElementById("password");
+  text.select();
+  document.execCommand("copy");
+}
+</script>
 </HEAD>
 <BODY>
 <h1>パスワードを乱数で自動生成します</h1>
@@ -39,7 +46,7 @@ document.fm.chr.value=w
 <table class="tab">
   <tr>
     <td><input type="button" value="実行" onClick="cal(this.form.ln.value)" >
-<input type="reset" name="Submit" value="リセット">　　パスワード：<textarea type="text" name="output"></textarea></td>
+<input type="reset" name="Submit" value="リセット">　　パスワード：<textarea  id="password" type="text" name="output"></textarea></td> <button onclick="password_copy()">パスワードをコピー</button>
   </tr><tr>
     <td>桁数：<input type="text" name="ln" size=10 value="0" ></td>
   </tr><tr>
@@ -60,7 +67,5 @@ document.fm.chr.value=w
 </div>
 </form>
 </td></tr></table>
-<!-- footer -->
-<script src="/js_footer.js" ></script>
 </BODY>
 </html>
