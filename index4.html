@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<link rel = "stylesheet" href = "omikuji_element.css"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    function tryFortune() {
+        var resultInt = Math.floor(Math.random () * 7)
+        switch (resultInt) {
+            case 0 : resultText = "大凶";   break;
+            case 1 : resultText = "凶";     break;
+            case 2 : resultText = "末吉";   break;
+            case 3 : resultText = "小吉";   break;
+            case 4 : resultText = "中吉";   break;
+            case 5 : resultText = "半吉";     break;
+            case 6 : resultText = "末小吉";     break;
+            case 7 : resultText = "小凶";     break;
+            case 8 : resultText = "半凶";     break;
+            case 9 : resultText = "末凶";     break;
+            default : resultText = "大吉";  break;
+        }
+        document.getElementById("result").textContent = resultText;
+    }
+</script>
+</head>
+<body>
+    <p><font  color="black" size="5.5">おみくじ</font></p>
+    <button class = "button is-primary" onclick="tryFortune()">おみくじを引く</button>
+    <p id = "result"></p>
+</body>
+</html>
