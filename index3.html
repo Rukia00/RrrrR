@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-language" content="ja">
+<meta charset="UTF-8">
+<TITLE>パスワード自動生成ツール</TITLE>
+<body> <section class="hero is-fullheight"style="background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvX7AlpsirPBSV2GxQi3xEri8KUAEnxUYuQg&usqp=CAU)"></body>
+<link rel="stylesheet" type="text/css" href="../../css/tom.css">
+<!-- common -->
+<script src="/js_common.js"></script>
+<script type="text/javascript">
+<!-- //          パスワードを作る
+function cal(a){
+  k=document.fm.chr.value
+  w=''
+  for (i=0;i<a;i++){w+=k.charAt(Math.floor(Math.random()*k.length))}
+  document.fm.output.value=w;
+}
+function cb(){
+w='';
+if(document.fm.lc.checked) w=  'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+if(document.fm.sc.checked) w=w+'abcdefghijklmnopqrstuvwxyz';
+if(document.fm.nc.checked) w=w+'0123456789';
+if(document.fm.kc.checked) w=w+'!"#$%&'+"'"+'()*+,-./:;<=>?@[\]^_{|}~';
+document.fm.chr.value=w
+}
+// -->
+</script>
+</HEAD>
+<BODY>
+<h1>パスワードを乱数で自動生成します</h1>
+<!-- header -->
+<script src="/js_header.js"></script>
+<p>アルファベット大文字、小文字、記号混じりで生成します。</p>
+<br>
+<table style="margin:0px auto;"><tr><td>
+<form name="fm">
+<div>
+<table class="tab">
+  <tr>
+    <td><input type="button" value="実行" onClick="cal(this.form.ln.value)" >
+<input type="reset" name="Submit" value="リセット">　　パスワード：<textarea type="text" name="output"></textarea></td>
+  </tr><tr>
+    <td>桁数：<input type="text" name="ln" size=10 value="0" ></td>
+  </tr><tr>
+    <td>
+    <p>使う文字の種類</p>
+    <p><input type="checkbox" name="lc" onClick="cb()">大文字　　
+<input type="checkbox" name="sc" onClick="cb()" checked>小文字　　
+<input type="checkbox" name="nc" onClick="cb()" checked>数字　　
+<input type="checkbox" name="kc" onClick="cb()">記号</p>
+    </td>
+  </tr><tr>
+    <td>
+    <p>自動生成される文字（変更可能です。）</p>
+    <p>&nbsp;<textarea cols="50" name="chr" rows="3">abcdefghijklmnopqrstuvwxyz0123456789</textarea></p>
+    </td>
+  </tr>
+</table>
+</div>
+</form>
+</td></tr></table>
+<!-- footer -->
+<script src="/js_footer.js" ></script>
+</BODY>
+</html>
