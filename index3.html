@@ -28,9 +28,10 @@ document.fm.chr.value=w
 </script>
 <script type="text/javascript">
 function password_copy() {
-  var text = document.getElementById("password");
-  text.select();
-  document.execCommand("copy");
+var text = document.getElementsByTagName("password")[0];
+
+text.select();
+document.execCommand("copy");
   alert("コピーしました！");
 }
 </script>
